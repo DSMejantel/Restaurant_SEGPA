@@ -1,0 +1,19 @@
+{
+    "component": "shell",
+    "title": "Cuisine SEGPA",
+    "link": "/",
+    "icon": "chef-hat",
+    "favicon":"/favicon.ico",
+    "language":"fr-FR",
+    "layout": "fluid",
+    "norobot": "TRUE",
+    "menu_item": [
+         {"title": "Réservation", "link": "/"},
+         {"title": "Organisation", "submenu": [
+            {"link": "/livre.sql", "title": "Suivi des prestations"},
+            {"link": "/def_repas.sql", "title": "Repas et services"}
+        ]},
+         {"title": "Comptabilité", "link": "/comptabilite.sql"},
+         {"title": "Paramètres", "link": "/parametres.sql"}
+        ]
+}
