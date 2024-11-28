@@ -1,5 +1,5 @@
 -- Mise àjour du menu 
-UPDATE menu SET entree=:entree, plat=:plat, dessert=:dessert, prix=:prix where repas_id=:id
+UPDATE menu SET entree=nullif(:entree, ''), plat=nullif(:plat, ''), dessert=nullif(:dessert, ''), prix=:prix where repas_id=:id
 
 
 

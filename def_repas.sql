@@ -13,9 +13,6 @@ SELECT 'Nombre de repas proposés' as label, 'total' AS name, 'number' as type, 
 
 -- Enregistrement d'un nouvelle prestation dans la base
 INSERT INTO repas(jour,formule_id,service_id,total) SELECT :date_rep as jour, :formule as formule_id, :service as service_id, :total as total where :total is not Null;
-UPDATE menu SET entree=Null WHERE LENGTH(entree)<1;
-UPDATE menu SET plat=Null WHERE LENGTH(plat)<1;
-UPDATE menu SET dessert=Null WHERE LENGTH(dessert)<1;
 
 -- Bouton Ajouter
 select 

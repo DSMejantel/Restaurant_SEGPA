@@ -11,10 +11,9 @@ INSERT INTO clients(repas_id,nom,courriel,tel,nombre,addition,infos)
 	:tel as tel,
 	:nombre as nombre,
 	$addition as addition,
-	:infos as infos
+	nullif(:infos, '') as infos
 	WHERE :nom IS NOT NULL;
 
-UPDATE clients SET infos=Null WHERE LENGTH(infos)<1;
 	
 -- Mettre à jour le nombre de produits disponibles	
 UPDATE repas SET resa=coalesce(resa,0)+CAST(:nombre AS INTEGER) WHERE id=:id AND :nombre is not Null;
