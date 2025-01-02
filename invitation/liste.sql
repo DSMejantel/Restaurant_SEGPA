@@ -14,7 +14,7 @@ select
    
     (
     SELECT formule from formules WHERE formule_id=formules.id) as value,
-    printf("%.2f",prix)||' euros' as small_text,
+    'INVITATION' as small_text,
   json_group_array(json_object(
       'icon', plats.icon,
       'color', plats.color,

@@ -1,7 +1,7 @@
 
 -- Formulaire pour prendre une réservation
 SELECT 'form' as component, 
-'reservation_confirm.sql' as action,
+'invitation_confirm.sql' as action,
 'Réserver' as validate,
     'green'           as validate_color;
 

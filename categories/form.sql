@@ -5,10 +5,10 @@ SELECT 'redirect' AS component,
         
 -- Formulaire pour ajouter une formule
 SELECT 'form' as component, 
-'def_formules.sql' as action,
+'def_categories.sql' as action,
 'Ajouter' as validate,
     'green'           as validate_color,
     'Effacer'           as reset;
 
-SELECT 'Formules' AS 'label', 'text' as type, 'tools-kitchen-2' as prefix_icon, 'formule' AS name, 8 as width, TRUE as required;
+SELECT 'Catégorie' AS 'label', 'text' as type, 'category-plus' as prefix_icon, 'categorie' AS name, 8 as width, TRUE as required;
 

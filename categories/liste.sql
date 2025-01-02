@@ -5,5 +5,5 @@ SELECT 'redirect' AS component,
 
 -- Liste des modèles
 SELECT 'list' as component;
-SELECT formule as description
- FROM formules ORDER by formule;
+SELECT categorie as description
+ FROM categories ORDER by categorie;
