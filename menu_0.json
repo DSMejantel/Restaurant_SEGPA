@@ -1,0 +1,19 @@
+{
+    "component": "shell",
+    "title": "Ateliers SEGPA",
+    "link": "/",
+    "icon": "chef-hat",
+    "favicon":"/favicon.ico",
+    "css":"/css/style.css",
+    "language":"fr-FR",
+    "layout": "fluid",
+    "norobot": "TRUE",
+    "menu_item": [
+         {"title": "Réservation", "link": "/index_reservation.sql"},
+         {"title": "Boutique", "link": "/index_panier.sql"},
+         {"title": "Connexion", "submenu": [
+            {"link": "/comptes/signin.sql", "title": "Se connecter"},
+            {"link": "/comptes/cas/login.sql", "title": "Se connecter avec l'ENT"}
+        ]
+}]
+}

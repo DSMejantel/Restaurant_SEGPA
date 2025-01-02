@@ -1,0 +1,26 @@
+{
+    "component": "shell",
+    "title": "Ateliers SEGPA",
+    "link": "/",
+    "icon": "chef-hat",
+    "favicon":"/favicon.ico",
+    "css":"/css/style.css",
+    "language":"fr-FR",
+    "layout": "fluid",
+    "norobot": "TRUE",
+    "menu_item": [
+         {"title": "Réservation", "link": "/index_reservation.sql"},
+         {"title": "Restaurant", "submenu": [
+            {"link": "/def_repas.sql", "title": "Créer et gérer les repas"},
+            {"link": "/livre.sql", "title": "Suivi des prestations"}
+        ]},
+        {"title": "Boutique", "submenu": [
+            {"link": "/index_panier.sql", "title": "Passer commande"},
+            {"link": "/boutique.sql", "title": "Liste des articles"},
+            {"link": "/boutique_commandes.sql", "title": "Commandes en cours"}
+        ]},
+        {"title": "Mon compte", "submenu": [
+            {"link": "/comptes/logout.sql", "title": "Se déconnecter"}
+        ]}
+    ]
+}

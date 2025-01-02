@@ -1,0 +1,35 @@
+{
+    "component": "shell",
+    "title": "Ateliers SEGPA",
+    "link": "/",
+    "icon": "chef-hat",
+    "favicon":"/favicon.ico",
+    "css":"/css/style.css",
+    "language":"fr-FR",
+    "layout": "fluid",
+    "norobot": "TRUE",
+    "menu_item": [
+         {"title": "Réservation", "link": "/index_reservation.sql"},
+         {"title": "Restaurant", "submenu": [
+            {"link": "/def_repas.sql", "title": "Créer et gérer les repas"},
+            {"link": "/index_invitation.sql", "title": "Invitations"},
+            {"link": "/livre.sql", "title": "Suivi des prestations"},
+            {"link": "/annulation.sql", "title": "Gestion des annulations"}
+        ]},
+        {"title": "Boutique", "submenu": [
+            {"link": "/index_panier.sql", "title": "Passer commande"},
+            {"link": "/boutique.sql", "title": "Liste des articles"},
+            {"link": "/boutique_commandes.sql", "title": "Commandes en cours"}
+        ]},
+         {"title": "Comptabilité", "link": "/comptabilite.sql"},
+         {"title": "Paramètres", "link": "/parametres.sql"},
+        {"title": "Comptes", "submenu": [
+            {"link": "/comptes/cas_param.sql", "title": "Paramètres ENT"},
+            {"link": "/comptes/comptes_ajout.sql", "title": "Ajouter un compte"},
+            {"link": "/comptes/comptes.sql", "title": "Gestion des comptes"}
+        ]},
+        {"title": "Mon compte", "submenu": [
+            {"link": "/comptes/logout.sql", "title": "Se déconnecter"}
+        ]}
+    ]
+}
