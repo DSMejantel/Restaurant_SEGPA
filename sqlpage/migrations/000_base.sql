@@ -1,13 +1,3 @@
-CREATE TABLE repas(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    jour TIMESTAMP NOT NULL,
-    service_id INTEGER,
-    formule_id INTEGER,
-    total INTEGER,
-    resa INTEGER,
-    reste INTEGER
-);
-
 CREATE TABLE services(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     service TEXT
@@ -18,19 +8,61 @@ CREATE TABLE formules(
     formule TEXT
 );
 
+CREATE TABLE allergenes(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    allergene TEXT,
+    icon TEXT
+);
+
+CREATE TABLE info_allergenes(
+    repas_id INTEGER,
+    allergene_id INTEGER
+);
+
+CREATE TABLE positions(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    position TEXT,
+    rang INTEGER
+);
+
 CREATE TABLE limite(
     lim INTEGER
 );
 
-CREATE TABLE menu(
-    repas_id INTEGER,
-    entree TEXT,
-    plat TEXT,
-    dessert TEXT,
-    prix DECIMAL
+
+CREATE TABLE repas(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    jour TIMESTAMP NOT NULL,
+    service_id INTEGER  REFERENCES services(id),
+    formule_id INTEGER  REFERENCES formules(id),
+    total INTEGER,
+    resa INTEGER,
+    reste INTEGER,
+    prix REAL DEFAULT 0.0
 );
 
+CREATE TABLE plats(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,         -- Nom du plat (e.g., "Salade au chèvre chaud")
+    position_id INTEGER,
+    repas_id INTEGER,
+    description TEXT,           
+    icon TEXT,                  -- Icon name for UI (e.g., "salad", "meat")
+    color TEXT               -- Color for UI (e.g., "green", "red")
+    
+);
+
+CREATE TABLE menus (
+    repas_id INTEGER NOT NULL,       
+    plat_id INTEGER NOT NULL,
+    PRIMARY KEY (plat_id, repas_id),
+    FOREIGN KEY (repas_id) REFERENCES repas(id),
+    FOREIGN KEY (plat_id) REFERENCES plats(id)     
+);
+
+
 CREATE TABLE clients(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     repas_id INTEGER,
     nom TEXT,
     courriel TEXT,
